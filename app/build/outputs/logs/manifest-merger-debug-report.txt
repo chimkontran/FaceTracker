@@ -1,0 +1,199 @@
+-- Merging decision tree log ---
+manifest
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:1-48:12
+MERGED from [com.android.support:design:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\318c7323a9ef8e71ae63d4c993b91bb0\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\33067ea0c63cfe3c753a3be862add14f\AndroidManifest.xml:17:1-27:12
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\6780439d85b89b7d2262d5b11c1fe0b9\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:16:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\3ecc52c50793854bbd91dbe582a3ea78\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bb5408c94e773d69ca49af01e444c1a9\AndroidManifest.xml:16:1-26:12
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\ff0ff3006ec512c2dec951fe69445966\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\63bb3a49fbf70f53b0e115dd8f4e7a96\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\af865917f538a3e6babad157b04e2617\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\e80ee9daa04fa1fae9e405ff1ce7cb81\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\892451d83ae1c75f7b7025e05fb1a726\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\1d5784c651b45f2f9be9ff984f404418\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\3ca93feab21e08231229eb2e3bb83529\AndroidManifest.xml:17:1-25:12
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\562ff6a19ee1e83fc907ff3bd80f26ba\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\73ff2e5940986c994f3f8cba3805c54d\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\e93beb977810bdb0082b3f21d3099db9\AndroidManifest.xml:17:1-27:12
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:1-48:12
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:1-48:12
+	package
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:3:5-69
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+	android:versionName
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:6:5-28
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:2:11-69
+	android:versionCode
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:5:5-28
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+	android:installLocation
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:4:5-35
+uses-feature#android.hardware.camera
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:8:5-60
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:8:19-57
+uses-permission#android.permission.CAMERA
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:10:5-65
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:10:22-62
+uses-permission#android.permission.WRITE_EXTERNAL_STORAGE
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:11:5-81
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:11:22-78
+uses-permission#android.permission.INTERNET
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:12:5-66
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:12:22-64
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:13:5-78
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:13:22-76
+uses-permission#android.permission.READ_EXTERNAL_STORAGE
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:14:5-79
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:14:22-77
+uses-sdk
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:16:5-18:41
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:16:5-18:41
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:16:5-18:41
+MERGED from [com.android.support:design:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\318c7323a9ef8e71ae63d4c993b91bb0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\318c7323a9ef8e71ae63d4c993b91bb0\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\33067ea0c63cfe3c753a3be862add14f\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\33067ea0c63cfe3c753a3be862add14f\AndroidManifest.xml:21:5-23:78
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\6780439d85b89b7d2262d5b11c1fe0b9\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\6780439d85b89b7d2262d5b11c1fe0b9\AndroidManifest.xml:4:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\3ecc52c50793854bbd91dbe582a3ea78\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\3ecc52c50793854bbd91dbe582a3ea78\AndroidManifest.xml:4:5-43
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bb5408c94e773d69ca49af01e444c1a9\AndroidManifest.xml:18:5-42
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bb5408c94e773d69ca49af01e444c1a9\AndroidManifest.xml:18:5-42
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\ff0ff3006ec512c2dec951fe69445966\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\ff0ff3006ec512c2dec951fe69445966\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\63bb3a49fbf70f53b0e115dd8f4e7a96\AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\63bb3a49fbf70f53b0e115dd8f4e7a96\AndroidManifest.xml:7:5-43
+MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\af865917f538a3e6babad157b04e2617\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-24.2.0.aar\af865917f538a3e6babad157b04e2617\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\e80ee9daa04fa1fae9e405ff1ce7cb81\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\e80ee9daa04fa1fae9e405ff1ce7cb81\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\892451d83ae1c75f7b7025e05fb1a726\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\892451d83ae1c75f7b7025e05fb1a726\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\1d5784c651b45f2f9be9ff984f404418\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\1d5784c651b45f2f9be9ff984f404418\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\3ca93feab21e08231229eb2e3bb83529\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\3ca93feab21e08231229eb2e3bb83529\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\562ff6a19ee1e83fc907ff3bd80f26ba\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\562ff6a19ee1e83fc907ff3bd80f26ba\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\73ff2e5940986c994f3f8cba3805c54d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\73ff2e5940986c994f3f8cba3805c54d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\e93beb977810bdb0082b3f21d3099db9\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\e93beb977810bdb0082b3f21d3099db9\AndroidManifest.xml:21:5-23:58
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:16:5-18:41
+INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:16:5-18:41
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\33067ea0c63cfe3c753a3be862add14f\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:18:9-38
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:17:9-34
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+		INJECTED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml
+application
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:20:5-46:19
+MERGED from [com.android.support:design:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\318c7323a9ef8e71ae63d4c993b91bb0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\design-24.2.0.aar\318c7323a9ef8e71ae63d4c993b91bb0\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\33067ea0c63cfe3c753a3be862add14f\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\appcompat-v7-24.2.0.aar\33067ea0c63cfe3c753a3be862add14f\AndroidManifest.xml:25:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\6780439d85b89b7d2262d5b11c1fe0b9\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-vision:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-vision-9.4.0.aar\6780439d85b89b7d2262d5b11c1fe0b9\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:19:5-23:19
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\3ecc52c50793854bbd91dbe582a3ea78\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-tasks:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-tasks-9.4.0.aar\3ecc52c50793854bbd91dbe582a3ea78\AndroidManifest.xml:5:5-20
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bb5408c94e773d69ca49af01e444c1a9\AndroidManifest.xml:20:5-24:19
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bb5408c94e773d69ca49af01e444c1a9\AndroidManifest.xml:20:5-24:19
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\ff0ff3006ec512c2dec951fe69445966\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-v4-24.2.0.aar\ff0ff3006ec512c2dec951fe69445966\AndroidManifest.xml:25:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\63bb3a49fbf70f53b0e115dd8f4e7a96\AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\volley-1.1.0.aar\63bb3a49fbf70f53b0e115dd8f4e7a96\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\e80ee9daa04fa1fae9e405ff1ce7cb81\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-fragment-24.2.0.aar\e80ee9daa04fa1fae9e405ff1ce7cb81\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\892451d83ae1c75f7b7025e05fb1a726\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-ui-24.2.0.aar\892451d83ae1c75f7b7025e05fb1a726\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\1d5784c651b45f2f9be9ff984f404418\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-24.2.0.aar\1d5784c651b45f2f9be9ff984f404418\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\3ca93feab21e08231229eb2e3bb83529\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-24.2.0.aar\3ca93feab21e08231229eb2e3bb83529\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\562ff6a19ee1e83fc907ff3bd80f26ba\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-core-utils-24.2.0.aar\562ff6a19ee1e83fc907ff3bd80f26ba\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\73ff2e5940986c994f3f8cba3805c54d\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-media-compat-24.2.0.aar\73ff2e5940986c994f3f8cba3805c54d\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\e93beb977810bdb0082b3f21d3099db9\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:24.2.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\support-compat-24.2.0.aar\e93beb977810bdb0082b3f21d3099db9\AndroidManifest.xml:25:5-20
+	android:label
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:25:9-36
+	android:hardwareAccelerated
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:22:9-43
+	android:icon
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:23:9-38
+	android:allowBackup
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:21:9-35
+	android:theme
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:24:9-47
+meta-data#com.google.android.gms.version
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:27:9-28:68
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bb5408c94e773d69ca49af01e444c1a9\AndroidManifest.xml:21:9-23:69
+MERGED from [com.google.android.gms:play-services-basement:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-basement-9.4.0.aar\bb5408c94e773d69ca49af01e444c1a9\AndroidManifest.xml:21:9-23:69
+	android:value
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:28:13-66
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:27:20-65
+meta-data#com.google.android.gms.vision.DEPENDENCIES
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:30:9-32:36
+	android:value
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:32:13-33
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:31:13-70
+activity#com.google.android.gms.samples.vision.face.facetracker.FaceTrackerActivity
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:34:9-45:20
+	android:screenOrientation
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:39:13-49
+	android:label
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:37:13-41
+	android:icon
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:36:13-42
+	android:theme
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:38:13-63
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:35:13-102
+intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:40:13-44:29
+action#android.intent.action.MAIN
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:41:17-69
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:41:25-66
+category#android.intent.category.LAUNCHER
+ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:43:17-77
+	android:name
+		ADDED from C:\Users\computer\StudioProjects\android-vision\visionSamples\FaceTracker\app\src\main\AndroidManifest.xml:43:27-74
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:20:9-22:45
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:22:19-43
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:21:19-78
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:9.4.0] C:\Users\computer\.gradle\caches\transforms-1\files-1.1\play-services-base-9.4.0.aar\6a6b98d0ff036a5c01fa665a0d2de732\AndroidManifest.xml:20:19-85
