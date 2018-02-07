@@ -24,6 +24,7 @@ import android.content.DialogInterface;
 import android.content.pm.PackageManager;
 import android.hardware.Camera;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -31,8 +32,10 @@ import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -50,8 +53,10 @@ import com.google.android.gms.vision.face.FaceDetector;
 import com.google.android.gms.samples.vision.face.facetracker.ui.camera.CameraSourcePreview;
 import com.google.android.gms.samples.vision.face.facetracker.ui.camera.GraphicOverlay;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedOutputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -68,15 +73,118 @@ public final class FaceTrackerActivity extends AppCompatActivity {
     private static final String TAG = "FaceTracker";
 
     private CameraSource mCameraSource = null;
-
     private CameraSourcePreview mPreview;
     private GraphicOverlay mGraphicOverlay;
+
+    private int faceCount = 0;
+    private String string, finalString;
+    private int gender=-1;
+    private int age=-1;
+    final Handler handler = new Handler();
+
+    private TextView mTextView;
 
     private static final int RC_HANDLE_GMS = 9001;
     // permission request codes need to be < 256
     private static final int RC_HANDLE_CAMERA_PERM = 2;
+    Runnable captureRunnable;
 
-    private Button mButton;
+    private boolean flagCapture = true;
+
+    final android.hardware.Camera.PictureCallback jpegCameraCallback = new Camera.PictureCallback() {
+         @Override
+         public void onPictureTaken(final byte[] bytes, Camera camera) {
+             Log.i(TAG, "onPictureTaken: ");
+             //Test pic size
+//             BufferedOutputStream bos = null;
+//             try {
+//                 bos = new BufferedOutputStream(new FileOutputStream("/sdcard/pic.jpeg"));
+//                 bos.write(bytes);
+//                 bos.flush();
+//                 bos.close();
+//             } catch (FileNotFoundException e) {
+//                 e.printStackTrace();
+//             }
+//             catch (IOException e) {
+//                 e.printStackTrace();
+//             }
+
+             // request
+
+             VolleyMultipartRequest strRequest = new VolleyMultipartRequest(Request.Method.POST, "https://api-us.faceplusplus.com/facepp/v3/detect",
+                     new Response.Listener<NetworkResponse>()
+                     {
+                         @Override
+                         public void onResponse(NetworkResponse netResponse)
+                         {
+                             String response= new String(netResponse.data);
+                             Log.i(TAG, "Capture: " + response);
+                             try {
+                                 JSONObject jsonObject = new JSONObject(response);
+                                 JSONArray faceObject = jsonObject.optJSONArray("faces");
+                                 string = "";
+                                 finalString = "";
+                                 faceCount = 0;
+                                 for (int i = 0; i < faceObject.length(); i ++)
+                                 {
+                                     JSONObject att=jsonObject.optJSONArray("faces").optJSONObject(i).optJSONObject("attributes");
+                                     if (att.optJSONObject("gender").getString("value").compareTo("Male") == 0)
+                                     {
+                                         gender = 0;
+                                     } else {
+                                         gender = 1;
+                                     }
+                                     age = att.optJSONObject("age").getInt("value");
+
+                                     string += (" | Gender: " + att.optJSONObject("gender").getString("value") + " | Age: " + age);
+                                     faceCount++;
+                                 }
+                                 finalString += ("Number of face: " + faceCount);
+                                 finalString += string;
+                                 Log.i("Testing", finalString);
+                                 mTextView.setText(finalString);
+
+                             } catch (Exception e)
+                             {
+                                 Log.i(TAG, e.toString());
+                             }
+
+                         }
+                     },
+                     new Response.ErrorListener()
+                     {
+                         @Override
+                         public void onErrorResponse(VolleyError error)
+                         {
+                             Log.i(TAG, "Capture: " + error);
+                         }
+                     })
+             {
+                 @Override
+                 protected Map<String, String> getParams()
+                 {
+                     Map<String, String> params = new HashMap<String, String>();
+                     params.put("api_key", "sLZBKzLUyTQdT3WCnK3hulQ4sAKFelAI");
+                     params.put("api_secret", "NVS8_mbFv5uJltszmYkdaqClgnhqgs8T");
+                     params.put("return_attributes", "gender,age");
+                     return params;
+                 }
+
+                 @Override
+                 protected Map<String, DataPart> getByteData() {
+                     Map<String, DataPart> params = new HashMap<>();
+                     params.put("image_file", new DataPart("file_avatar.jpg", bytes, "image/jpeg"));
+                     return params;
+                 }
+
+             };
+             RequestSingleton.getInstance(FaceTrackerActivity.this).addToRequestQueue(strRequest);
+
+
+             camera.startPreview();
+             flagCapture = true;
+         }
+     };
 
     //==============================================================================================
     // Activity Methods
@@ -89,12 +197,28 @@ public final class FaceTrackerActivity extends AppCompatActivity {
     public void onCreate(Bundle icicle) {
         super.onCreate(icicle);
         setContentView(R.layout.main);
+
         mPreview = (CameraSourcePreview) findViewById(R.id.preview);
         mGraphicOverlay = (GraphicOverlay) findViewById(R.id.faceOverlay);
+        mTextView = (TextView) findViewById(R.id.textView);
+        captureRunnable= new Runnable() {
+            @Override
+            public void run() {
 
-        // Capture button
-        mButton = (Button) findViewById(R.id.captureButton);
-
+                if (flagCapture)
+                {
+                    try {
+                        mPreview.camera.takePicture(null, null, jpegCameraCallback);
+                        flagCapture = false;
+                    }
+                    catch (RuntimeException e)
+                    {
+                        e.printStackTrace();
+                        handler.postDelayed(captureRunnable,1000);
+                    }
+                }
+            }
+        };
         // Check for the camera permission before accessing the camera.  If the
         // permission is not granted yet, request permission.
         int rc = ActivityCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
@@ -165,32 +289,30 @@ public final class FaceTrackerActivity extends AppCompatActivity {
             Log.w(TAG, "Face detector dependencies are not yet available.");
         }
 
-        // Capture button
-//        mButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                captureImage();
-//            }
-//        });
-
         mCameraSource = new CameraSource.Builder(context, detector)
                 .setRequestedPreviewSize(640, 480)
                 .setFacing(CameraSource.CAMERA_FACING_FRONT)
+//                .setFacing(CameraSource.CAMERA_FACING_BACK)
                 .setRequestedFps(25.0f)
                 .build();
-    }
 
-    // Try to Capture image
-//    private void captureImage ()
-//    {
-//        Log.i("Capture: ", "Clicked capture button");
-//
-//        mCameraSource.takePicture(null, jpegCallback);
-//
-//        Log.i("Capture: ", "Took picture");
-//    }
-//
-//
+
+    }
+   final CameraSource.ShutterCallback shutterCallback= new CameraSource.ShutterCallback() {
+       @Override
+       public void onShutter() {
+
+       }
+   };
+
+    final CameraSource.PictureCallback jpegCallback = new CameraSource.PictureCallback() {
+        @Override
+        public void onPictureTaken(final byte[] data) {
+            // Json request
+
+        }
+
+    };
 
     /**
      * Restarts the camera.
@@ -334,17 +456,21 @@ public final class FaceTrackerActivity extends AppCompatActivity {
          */
         @Override
         public void onNewItem(int faceId, Face item) {
-            mFaceGraphic.setId(faceId, mCameraSource, FaceTrackerActivity.this);
+            mFaceGraphic.setId(faceId);
+            handler.removeCallbacks(null);
+            handler.postDelayed(captureRunnable,1000);
+
         }
 
         /**
          * Update the position/characteristics of the face within the overlay.
          */
         @Override
-        public void onUpdate(FaceDetector.Detections<Face> detectionResults, Face face) {
+        public void onUpdate(FaceDetector.Detections<Face> detectionResults,  Face face) {
             mOverlay.add(mFaceGraphic);
             mFaceGraphic.updateFace(face);
         }
+
 
         /**
          * Hide the graphic when the corresponding face was not detected.  This can happen for
@@ -354,6 +480,21 @@ public final class FaceTrackerActivity extends AppCompatActivity {
         @Override
         public void onMissing(FaceDetector.Detections<Face> detectionResults) {
             mOverlay.remove(mFaceGraphic);
+            if (mOverlay.getOverlaySize() > 0)
+            {
+                handler.removeCallbacks(null);
+                handler.postDelayed(captureRunnable,1000);
+            }
+            else
+            {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mTextView.setText("");
+                    }
+                });
+
+            }
         }
 
         /**
@@ -363,6 +504,20 @@ public final class FaceTrackerActivity extends AppCompatActivity {
         @Override
         public void onDone() {
             mOverlay.remove(mFaceGraphic);
+            if (mOverlay.getOverlaySize() > 0)
+            {
+                handler.removeCallbacks(null);
+                handler.postDelayed(captureRunnable,1000);
+            }
+            else
+            {
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        mTextView.setText("");
+                    }
+                });
+            }
         }
     }
 }

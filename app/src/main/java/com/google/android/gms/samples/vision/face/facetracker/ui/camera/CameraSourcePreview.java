@@ -15,8 +15,10 @@
  */
 package com.google.android.gms.samples.vision.face.facetracker.ui.camera;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.hardware.Camera;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.SurfaceHolder;
@@ -24,6 +26,7 @@ import android.view.SurfaceView;
 import android.view.ViewGroup;
 
 import com.google.android.gms.common.images.Size;
+import com.google.android.gms.samples.vision.face.facetracker.VisionApiCameraFix;
 import com.google.android.gms.vision.CameraSource;
 
 import java.io.IOException;
@@ -36,6 +39,7 @@ public class CameraSourcePreview extends ViewGroup {
     private boolean mStartRequested;
     private boolean mSurfaceAvailable;
     public CameraSource mCameraSource;
+    public Camera camera;
 
     private GraphicOverlay mOverlay;
 
@@ -58,6 +62,7 @@ public class CameraSourcePreview extends ViewGroup {
         mCameraSource = cameraSource;
 
         if (mCameraSource != null) {
+
             mStartRequested = true;
             startIfReady();
         }
@@ -81,11 +86,22 @@ public class CameraSourcePreview extends ViewGroup {
         }
     }
 
+    @SuppressLint("MissingPermission")
     private void startIfReady() throws IOException {
         if (mStartRequested && mSurfaceAvailable) {
             mCameraSource.start(mSurfaceView.getHolder());
+            camera = VisionApiCameraFix.getCamera(mCameraSource);
+            camera.stopPreview();
+            Camera.Parameters param= camera.getParameters();
+            param.setPictureSize(1024,768);
+            camera.setParameters(param);
+            camera.startPreview();
+//            for (Camera.Size s:param.getSupportedPictureSizes()) {
+//                Log.d(TAG,s.width+"|"+s.height);
+//            }
             if (mOverlay != null) {
                 Size size = mCameraSource.getPreviewSize();
+
                 int min = Math.min(size.getWidth(), size.getHeight());
                 int max = Math.max(size.getWidth(), size.getHeight());
                 if (isPortraitMode()) {

@@ -29,9 +29,11 @@
 
   </LinearLayout>
 
-  <Button
+  <TextView
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:text="Capture"
-      android:id="@+id/captureButton"/>
+      android:layout_alignBottom="@+id/topLayout"
+      android:paddingBottom="50dp"
+      android:text="@string/display_picture_info"
+      android:id="@+id/textView"/>
 </RelativeLayout>

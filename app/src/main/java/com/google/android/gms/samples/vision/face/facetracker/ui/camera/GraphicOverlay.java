@@ -152,6 +152,14 @@ public class GraphicOverlay extends View {
         postInvalidate();
     }
 
+    //
+    public int getOverlaySize ()
+    {
+        synchronized (mLock) {
+            return mGraphics.size();
+        }
+    }
+
     /**
      * Sets the camera attributes for size and facing direction, which informs how to transform
      * image coordinates later.

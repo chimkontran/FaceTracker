@@ -16,13 +16,18 @@
 package com.google.android.gms.samples.vision.face.facetracker;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
+import android.os.Handler;
 import android.util.Base64;
 import android.util.Log;
+import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.NetworkResponse;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,8 +37,13 @@ import com.google.android.gms.samples.vision.face.facetracker.ui.camera.GraphicO
 import com.google.android.gms.vision.CameraSource;
 import com.google.android.gms.vision.face.Face;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.BufferedOutputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -42,6 +52,7 @@ import java.util.Map;
  * graphic overlay view.
  */
 class FaceGraphic extends GraphicOverlay.Graphic {
+    private static float canvasWidth = 1;
     private static final float FACE_POSITION_RADIUS = 10.0f;
     private static final float ID_TEXT_SIZE = 40.0f;
     private static final float ID_Y_OFFSET = 50.0f;
@@ -66,11 +77,12 @@ class FaceGraphic extends GraphicOverlay.Graphic {
     private Paint mBoxPaint;
     private  int gender=-1;
     private  int age=-1;
-    private  Context context;
+    private boolean flagRequest;
 
     private volatile Face mFace;
     private int mFaceId;
     private float mFaceHappiness;
+    private Context context;
 
     FaceGraphic(GraphicOverlay overlay) {
         super(overlay);
@@ -89,77 +101,15 @@ class FaceGraphic extends GraphicOverlay.Graphic {
         mBoxPaint.setColor(selectedColor);
         mBoxPaint.setStyle(Paint.Style.STROKE);
         mBoxPaint.setStrokeWidth(BOX_STROKE_WIDTH);
-
-        Log.i("FaceGraphic: " , "Current" );
     }
-    final CameraSource.PictureCallback jpegCallback = new CameraSource.PictureCallback() {
-        @Override
-        public void onPictureTaken(final byte[] data) {
-            // Json request
-            Log.i(TAG, "onPictureTaken: ");
-            StringRequest strRequest = new StringRequest(Request.Method.POST, "https://api-us.faceplusplus.com/facepp/v3/detect",
-                    new Response.Listener<String>()
-                    {
-                        @Override
-                        public void onResponse(String response)
-                        {
-                            Log.i(TAG, "Capture: " + response);
 
-                            // Convert string -> json
-                            try {
-                                JSONObject jsonObject = new JSONObject(response);
-                                JSONObject att=jsonObject.optJSONArray("faces").optJSONObject(0).optJSONObject("attributes");
-                                if (att.optJSONObject("gender").getString("value").compareTo("Male") == 0)
-                                {
-                                    gender = 0;
-                                } else {
-                                    gender = 1;
-                                }
 
-                                age = att.optJSONObject("age").getInt("value");
-
-                            } catch (Exception e)
-                            {
-                                Log.i(TAG, e.toString());
-                            }
-
-                        }
-                    },
-                    new Response.ErrorListener()
-                    {
-                        @Override
-                        public void onErrorResponse(VolleyError error)
-                        {
-                            Log.i(TAG, "Capture: " + error);
-                        }
-                    })
-            {
-                @Override
-                protected Map<String, String> getParams()
-                {
-                    // get the base 64 string
-                    String imgString = Base64.encodeToString(data, Base64.NO_WRAP);
-                    Map<String, String> params = new HashMap<String, String>();
-                    params.put("api_key", "sLZBKzLUyTQdT3WCnK3hulQ4sAKFelAI");
-                    params.put("api_secret", "NVS8_mbFv5uJltszmYkdaqClgnhqgs8T");
-                    params.put("image_base64", imgString);
-                    params.put("return_attributes", "gender,age");
-                    return params;
-                }
-
-            };
-
-            RequestSingleton.getInstance(context).addToRequestQueue(strRequest);
-        }
-
-    };
-    void setId(int id, CameraSource camera, Context ctx) {
+    void setId(int id) {
         mFaceId = id;
         age = -1;
         gender = -1;
-        context=ctx;
-        camera.takePicture(null,jpegCallback);
-        //chup lay du lieu/
+        flagRequest=false;
+        //camera.takePicture(null,jpegCallback);
     }
 
 
@@ -169,6 +119,8 @@ class FaceGraphic extends GraphicOverlay.Graphic {
      */
     void updateFace(Face face) {
         mFace = face;
+
+
         postInvalidate();
     }
 
@@ -182,11 +134,15 @@ class FaceGraphic extends GraphicOverlay.Graphic {
             return;
         }
 
+        // Get canvasWidth to scale with real picture
+        canvasWidth = canvas.getWidth();
+
         // Draws a circle at the position of the detected face, with the face's track id below.
         float x = translateX(face.getPosition().x + face.getWidth() / 2);
         float y = translateY(face.getPosition().y + face.getHeight() / 2);
         canvas.drawCircle(x, y, FACE_POSITION_RADIUS, mFacePositionPaint);
         canvas.drawText("id: " + mFaceId, x + ID_X_OFFSET, y + ID_Y_OFFSET, mIdPaint);
+
         String tmp="";
         if(this.age>-1){
           tmp=" | "+age;
@@ -210,5 +166,21 @@ class FaceGraphic extends GraphicOverlay.Graphic {
         float right = x + xOffset;
         float bottom = y + yOffset;
         canvas.drawRect(left, top, right, bottom, mBoxPaint);
+    }
+
+    public  FacePosition getPostion(Face face, float scaleRatio){
+        float x = translateX(face.getPosition().x + face.getWidth() / 2);
+        float y = translateY(face.getPosition().y + face.getHeight() / 2);
+
+
+
+        FacePosition p= new FacePosition();
+        p.centerX = scaleX(face.getWidth() / 2.0f);
+        p.centerY = scaleY(face.getHeight() / 2.0f);
+        p.left =(int)(( x - p.centerX) * scaleRatio);
+        p.top = (int)((y - p.centerY) * scaleRatio);
+        p.right =(int)(( x + p.centerX) * scaleRatio);
+        p.bottom = (int)((y + p.centerY) * scaleRatio);
+        return p;
     }
 }
